@@ -10,7 +10,7 @@ void SerialTask(void* args) {
   Serial.begin(9600);
 
   for (;;) {
-    Serial.println("Hello World");
+    Serial.println("debug message");
     vTaskDelay(1000);
   }
 }

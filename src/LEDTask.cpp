@@ -75,13 +75,13 @@ void LEDTask(void* args) {
     testDelayMS(100);
     digitalWrite(ledPin, HIGH);
     testDelayMS(100);
-
+    
     digitalWrite(ledPin, LOW);
-    testDelayMS(500);
+    testDelayMS(100);
     digitalWrite(ledPin, HIGH);
     testDelayMS(500);
 
-//    vTaskDelay(500);
+    vTaskDelay(500);
   }
 }
 

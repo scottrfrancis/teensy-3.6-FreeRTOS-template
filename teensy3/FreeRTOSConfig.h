@@ -87,6 +87,18 @@ extern "C" {
  * See http://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
 
+/* adding Plus TCP/IP to the project */
+// must be running heap 4 or 5 -- going with 4 as we only need one segment
+#define configAPPLICATION_ALLOCATED_HEAP 1
+
+
+
+/*---------------------------------
+ *
+ * original source below
+ *
+ *-------------------------------*/
+
 
 /* Set configCREATE_LOW_POWER_DEMO to one to run the simple blinky demo low power
 example, or 1 to run the more comprehensive test and demo application.  See

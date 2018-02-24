@@ -48,6 +48,7 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 # path location for FreeRTOS directory structure
 FREERTOSPATH = FreeRTOS/Source
 FREERTOSPORT = portable/GCC/ARM_CM4F
+# FREERTOSMEMPATH = portable/MemMang
 
 #************************************************************************
 # Settings below this point usually do not need to be edited
@@ -118,8 +119,9 @@ C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
 INO_FILES := $(wildcard src/*.ino)
 
-FREERTOS_FILES = $(wildcard $(FREERTOSPATH)/*.c) 
+FREERTOS_FILES = $(wildcard $(FREERTOSPATH)/*.c)
 FREERTOS_FILES += $(wildcard $(FREERTOSPATH)/$(FREERTOSPORT)/*.c)
+# FREERTOS_FILES += $(wildcard $(FREERTOSPATH)/$(FREERTOSMEMPATH)/heap_4.c)
 
 # include paths for libraries
 L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))
@@ -133,13 +135,15 @@ build: $(TARGET).elf
 
 hex: $(TARGET).hex
 
-post_compile: $(TARGET).hex
-	@$(abspath $(TOOLSPATH))/teensy_post_compile -file="$(basename $<)" -path=$(CURDIR) -tools="$(abspath $(TOOLSPATH))"
-
-reboot:
-	@-$(abspath $(TOOLSPATH))/teensy_reboot
-
-upload: post_compile reboot
+# post_compile: $(TARGET).hex
+# 	@$(abspath $(TOOLSPATH))/teensy_post_compile -file="$(basename $<)" -path=$(CURDIR) -tools="$(abspath $(TOOLSPATH))"
+#
+# reboot:
+# 	@-$(abspath $(TOOLSPATH))/teensy_reboot
+# 
+# upload: post_compile reboot
+upload: hex
+	teensy_loader_cli -mmcu=mk66fx1m0 -ws $(TARGET).hex
 
 $(BUILDDIR)/%.o: %.c
 	@echo "[CC]\t$<"

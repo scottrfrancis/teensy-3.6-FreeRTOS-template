@@ -36,46 +36,46 @@ void LEDTask(void* args) {
 //    }
 
     // test different delays, monitor with oscilloscope to verify timing
-    digitalWrite(ledPin, LOW);
-    testDelayMS(1);
-    digitalWrite(ledPin, HIGH);
-    testDelayMS(1);
+    // digitalWrite(ledPin, LOW);
+    // testDelayMS(1);
+    // digitalWrite(ledPin, HIGH);
+    // testDelayMS(1);
+    //
+    // digitalWrite(ledPin, LOW);
+    // delay(1);
+    // digitalWrite(ledPin, HIGH);
+    // delay(1);
+    //
+    // digitalWrite(ledPin, LOW);
+    // vTaskDelay(1 / portTICK_PERIOD_MS);
+    // digitalWrite(ledPin, HIGH);
+    // vTaskDelay(1 / portTICK_PERIOD_MS);
+    //
+    // digitalWrite(ledPin, LOW);
+    // delay(5);
+    // digitalWrite(ledPin, HIGH);
+    // delay(5);
+    //
+    // digitalWrite(ledPin, LOW);
+    // testDelayMS(5);
+    // digitalWrite(ledPin, HIGH);
+    // testDelayMS(5);
+    //
+    // digitalWrite(ledPin, LOW);
+    // vTaskDelay(5 / portTICK_PERIOD_MS);
+    // digitalWrite(ledPin, HIGH);
+    // vTaskDelay(5 / portTICK_PERIOD_MS);
 
-    digitalWrite(ledPin, LOW);
-    delay(1);
-    digitalWrite(ledPin, HIGH);
-    delay(1);
+    // digitalWrite(ledPin, LOW);
+    // testDelayMS(20);
+    // digitalWrite(ledPin, HIGH);
+    // testDelayMS(20);
 
-    digitalWrite(ledPin, LOW);
-    vTaskDelay(1 / portTICK_PERIOD_MS);
-    digitalWrite(ledPin, HIGH);
-    vTaskDelay(1 / portTICK_PERIOD_MS);
-
-    digitalWrite(ledPin, LOW);
-    delay(5);
-    digitalWrite(ledPin, HIGH);
-    delay(5);
-
-    digitalWrite(ledPin, LOW);
-    testDelayMS(5);
-    digitalWrite(ledPin, HIGH);
-    testDelayMS(5);
-
-    digitalWrite(ledPin, LOW);
-    vTaskDelay(5 / portTICK_PERIOD_MS);
-    digitalWrite(ledPin, HIGH);
-    vTaskDelay(5 / portTICK_PERIOD_MS);
-
-    digitalWrite(ledPin, LOW);
-    testDelayMS(20);
-    digitalWrite(ledPin, HIGH);
-    testDelayMS(20);
-
-    digitalWrite(ledPin, LOW);
-    testDelayMS(100);
-    digitalWrite(ledPin, HIGH);
-    testDelayMS(100);
-    
+    // digitalWrite(ledPin, LOW);
+    // testDelayMS(100);
+    // digitalWrite(ledPin, HIGH);
+    // testDelayMS(100);
+    //
     digitalWrite(ledPin, LOW);
     testDelayMS(100);
     digitalWrite(ledPin, HIGH);

@@ -10,7 +10,7 @@ void SerialTask(void* args) {
   Serial.begin(9600);
 
   for (;;) {
-    Serial.println("Added a bunch of TCP/IP Files");
+    Serial.println("rand is a ghost of the future; C-a C-q will get you out");
     vTaskDelay(1000);
   }
 }
